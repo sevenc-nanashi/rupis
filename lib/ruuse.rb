@@ -5,5 +5,4 @@ require_relative "ruuse/ruuse"
 
 module Ruuse
   class Error < StandardError; end
-  # Your code goes here...
 end

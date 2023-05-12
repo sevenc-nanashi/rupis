@@ -1,12 +1,17 @@
-use magnus::{define_module, function, prelude::*, Error};
+mod entry;
+mod error;
 
-fn hello(subject: String) -> String {
-    format!("Hello from Rust, {}!", subject)
+use magnus::Error;
+use magnus::{define_module, function, prelude::*};
+
+fn main() -> Result<(), Error> {
+    entry::main();
+    Ok(())
 }
 
 #[magnus::init]
 fn init() -> Result<(), Error> {
     let module = define_module("Ruuse")?;
-    module.define_singleton_method("hello", function!(hello, 1))?;
+    module.define_singleton_method("start", function!(main, 0))?;
     Ok(())
 }
