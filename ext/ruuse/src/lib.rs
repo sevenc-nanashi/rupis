@@ -1,17 +1,22 @@
 mod entry;
 mod error;
+mod internal;
 
-use magnus::Error;
 use magnus::{define_module, function, prelude::*};
 
-fn main() -> Result<(), Error> {
-    entry::main();
+fn start(server: magnus::Value) -> Result<(), Box<dyn std::error::Error>> {
+    let rt = tokio::runtime::Runtime::new()?;
+    let server = internal::InternalServer::new(server);
+    rt.block_on(entry::main(server));
     Ok(())
 }
 
 #[magnus::init]
-fn init() -> Result<(), Error> {
+fn init() -> Result<(), magnus::Error> {
     let module = define_module("Ruuse")?;
-    module.define_singleton_method("start", function!(main, 0))?;
+    module.define_singleton_method(
+        "_start",
+        function!(|server: magnus::Value| { start(server).is_ok() }, 1),
+    )?;
     Ok(())
 }
