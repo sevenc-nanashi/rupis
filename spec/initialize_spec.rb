@@ -6,7 +6,8 @@ RSpec.describe Rupis do
   it "can initialize" do
     expect(server).not_to be nil
     resp =
-      server.execute("initialize", { processId: Process.pid, capabilities: {} })
+      server.request("initialize", { processId: Process.pid, capabilities: {} })
     expect(resp).to eq({ capabilities: {} })
+    server.notify("initialized", {})
   end
 end

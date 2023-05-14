@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruuse (0.1.0)
+    rupis (0.1.0)
       syntax_tree (~> 6.1)
 
 GEM
@@ -60,7 +60,7 @@ DEPENDENCIES
   rb_sys (~> 0.9.63)
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  ruuse!
+  rupis!
 
 BUNDLED WITH
    2.4.9

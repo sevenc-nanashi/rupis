@@ -40,6 +40,8 @@ pub enum Node {
     Ident(Ident),
     #[serde(rename = "void_stmt")]
     VoidStmt(VoidStmt),
+    #[serde(rename = "string_literal")]
+    StringLiteral(StringLiteral),
 }
 
 #[derive(Debug, Deserialize)]
@@ -82,4 +84,32 @@ pub struct Ident {
 pub struct VoidStmt {
     pub location: Location,
 }
+
+#[derive(Debug, Deserialize)]
+pub struct StringLiteral {
+    pub location: Location,
+    pub parts: Vec<StringLiteralPart>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(tag = "type")]
+pub enum StringLiteralPart {
+    #[serde(rename = "tstring_content")]
+    TStringContent(TStringContent),
+    #[serde(rename = "string_embexpr")]
+    StringEmbExpr(StringEmbExpr),
+}
+
+#[derive(Debug, Deserialize)]
+pub struct TStringContent {
+    pub location: Location,
+    pub value: String,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct StringEmbExpr {
+    pub location: Location,
+    pub statements: Statements,
+}
+
 
