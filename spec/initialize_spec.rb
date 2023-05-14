@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Ruuse do
+RSpec.describe Rupis do
   let(:server) { Client.new }
 
   it "can initialize" do

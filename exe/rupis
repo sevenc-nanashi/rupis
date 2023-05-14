@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "ruuse"
+require "rupis"
 
-Ruuse.start
+Rupis.start

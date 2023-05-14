@@ -13,8 +13,8 @@ require "rb_sys/extensiontask"
 
 task build: :compile
 
-RbSys::ExtensionTask.new("ruuse") do |ext|
-  ext.lib_dir = "lib/ruuse"
+RbSys::ExtensionTask.new("rupis") do |ext|
+  ext.lib_dir = "lib/rupis"
 end
 
 task default: %i[compile spec rubocop]

@@ -1,13 +1,13 @@
-# Ruuse
+# Rupis
 
-Ruuse is a Ruby Language server, powered with Rust.
+Rupis is a Ruby Language server, powered with Rust.
 
 > **Warning**
 > This project is in early development stage, and is not ready for production use.
 
 ## Installation
 
-    $ gem install ruuse
+    $ gem install rupis
 
 ## Usage
 
@@ -37,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sevenc-nanashi/ruuse. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sevenc-nanashi/ruuse/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/sevenc-nanashi/rupis. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sevenc-nanashi/rupis/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -45,4 +45,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Ruuse project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/sevenc-nanashi/ruuse/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Rupis project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/sevenc-nanashi/rupis/blob/main/CODE_OF_CONDUCT.md).

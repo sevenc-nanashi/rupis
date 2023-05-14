@@ -2,7 +2,7 @@
 
 require "syntax_tree"
 
-module Ruuse
+module Rupis
   class InternalServer
     def initialize
       # TODO

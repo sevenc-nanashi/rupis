@@ -3,5 +3,5 @@
 # in the ext/ directory.
 
 [workspace]
-members = ["./ext/ruuse"]
+members = ["./ext/rupis"]
 resolver = "2"

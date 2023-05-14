@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "ruuse"
+require "rupis"
 require "open3"
 require "json"
 
@@ -18,7 +18,7 @@ end
 
 class Client
   def initialize
-    @server = Open3.popen3("ruby -Ilib exe/ruuse")
+    @server = Open3.popen3("ruby -Ilib exe/rupis")
     @id = 0
   end
 
