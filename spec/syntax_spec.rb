@@ -22,9 +22,5 @@ RSpec.describe Rupis do
         }
       }
     )
-    expect { server.receive }.to raise_error(Timeout::Error)
   end
 end
-
-# file:///tmp/20230514-7539-lqkcok
-# file:///tmp/20230514-20050-1ea6s

@@ -25,6 +25,11 @@ RSpec.shared_context "server" do
     c.notify("initialized", {})
     c
   end
+
+  after do
+    server.request("shutdown")
+    server.notify("exit")
+  end
 end
 
 class Client
@@ -45,12 +50,14 @@ class Client
     @server[0].flush
   end
 
-  def notify(method, payload)
+  def notify(method, payload = nil)
     write({ jsonrpc: "2.0", method: method, params: payload })
   end
 
-  def request(method, payload)
-    write({ jsonrpc: "2.0", id: @id += 1, method: method, params: payload })
+  def request(method, payload = nil)
+    payload_hash = { jsonrpc: "2.0", id: @id += 1, method: method }
+    payload_hash[:params] = payload if payload
+    write(payload_hash)
 
     r = receive
     raise "Response does not match" unless r[:id] == @id
